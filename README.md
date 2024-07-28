@@ -1,50 +1,62 @@
-# Welcome to your Expo app 👋
+# Movie Demo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the Movie Demo App! This app is built with [Expo](https://expo.dev), utilizing React Query for state management and data fetching, Expo Router for navigation, and Axios for making API requests.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Data Fetching:** Utilizes Axios to make API requests to the TMDB (The Movie Database) API.
+- **State Management:** Manages the application state and caching mechanisms using React Query.
+- **Navigation:** Uses Expo Router to handle navigation within the app.
+- **Responsive UI:** Provides a responsive user interface suitable for various device sizes.
 
-   ```bash
-   npm install
-   ```
+## Prerequisites
 
-2. Start the app
+Before you begin, ensure you have the following installed:
 
-   ```bash
-    npx expo start
-   ```
+- Node.js
+- npm or yarn
+- Expo CLI:
+  ```bash
+  npm install -g expo-cli
+  ```
 
-In the output, you'll find options to open the app in a
+## Getting Started
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Follow these steps to get the app up and running:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 1. Install Dependencies
 
-## Get a fresh project
-
-When you're ready, run:
+Navigate to the project directory and install the required dependencies:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Configure API Key
 
-## Learn more
+Create a `.env` file in the root of your project directory and add your TMDB API key:
 
-To learn more about developing your project with Expo, look at the following resources:
+```env
+EXPO_PUBLIC_API_KEY=<YOUR_TMDB_KEY>
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 3. Start the App
 
-## Join the community
+Run the following command to start the Expo development server:
 
-Join our community of developers creating universal apps.
+```bash
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Screenshots and Media
+
+Here are some visuals of our app:
+
+![Details Screen](./screenshot/details.png)
+![Home Screen](./screenshot/home.png)
+
+### Demo Video
+
+<video width="320" height="240" controls>
+  <source src="./screenshot/video.mp4" type="video/mp4">
+</video>
