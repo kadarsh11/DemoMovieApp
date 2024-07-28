@@ -5,13 +5,13 @@ Welcome to the Movie Demo App! This app is built with [Expo](https://expo.dev), 
 # Screenshots
 
 <div style="display: flex; justify-content: space-around; align-items: center;">
-  <img src="./screenshot/details.png" alt="Details Screen" width="320" height="240" />
-  <img src="./screenshot/home.png" alt="Home Screen" width="320" height="240" />
+  <img src="./screenshot/details.png" alt="Details Screen" width="320" />
+  <img src="./screenshot/home.png" alt="Home Screen" width="320" />
 </div>
 
 ### Demo Video
 
-<video width="320" height="240" controls>
+<video width="320" controls>
   <source src="./screenshot/video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
