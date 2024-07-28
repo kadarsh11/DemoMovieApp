@@ -16,6 +16,8 @@ Welcome to the Movie Demo App! This app is built with [Expo](https://expo.dev), 
   Your browser does not support the video tag.
 </video>
 
+[Download Video](https://github.com/kadarsh11/DemoMovieApp/blob/main/screenshot/video.mp4 "Download Video 💽")
+
 ## Features
 
 - **Data Fetching:** Utilizes Axios to make API requests to the TMDB (The Movie Database) API.
