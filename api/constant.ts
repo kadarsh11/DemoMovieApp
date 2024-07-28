@@ -1,4 +1,5 @@
 import { QueryClient } from "@tanstack/react-query";
+import { Dimensions } from "react-native";
 
 export const queryClient = new QueryClient();
 
@@ -12,4 +13,9 @@ export const MovieCategories = {
     popular: "popular",
     top_rated: "top_rated",
     upcoming: "upcoming",
+}
+
+export const AppConfig = {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
 }

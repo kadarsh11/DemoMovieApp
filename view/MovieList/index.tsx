@@ -1,7 +1,9 @@
-import { QKeys, fetchMovies } from "@/api";
+import { AppConfig, QKeys, fetchMovies } from "@/api";
+import Poster from "@/components/Poster";
+import { IMovie } from "@/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import React from "react";
-import { FlatList, Image, Text, View } from "react-native";
+import React, { useCallback } from "react";
+import { FlatList, Image, ListRenderItemInfo, Text, View } from "react-native";
 
 interface Props {
   category: string;
@@ -18,6 +20,9 @@ const MovieList = ({ category }: Props) => {
           ? lastPage.nextPage
           : undefined,
     });
+  const renderItem = useCallback(({ item }: ListRenderItemInfo<IMovie>) => {
+    return <Poster movie={item} />;
+  }, []);
 
   if (isLoading) return <Text>Loading...</Text>;
   if (isError) return <Text>Error: {error.message}</Text>;
@@ -27,17 +32,8 @@ const MovieList = ({ category }: Props) => {
       data={data?.pages?.flatMap?.((page) => page.data)}
       onEndReached={() => hasNextPage && fetchNextPage()}
       onEndReachedThreshold={0.5}
-      renderItem={({ item }) => (
-        <View style={{ margin: 10 }}>
-          <Image
-            source={{
-              uri: `https://image.tmdb.org/t/p/w500${item.poster_path}`,
-            }}
-            style={{ width: 100, height: 150 }}
-          />
-          <Text>{item.title}</Text>
-        </View>
-      )}
+      numColumns={2}
+      renderItem={renderItem}
       keyExtractor={(item) => item?.id?.toString()}
     />
   );
