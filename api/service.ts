@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-export const fetchMovies = async ({ pageParam = 1, queryKey = 'top_rated' }) => {
-    const category = queryKey[1];
+export const fetchMovies = async ({ pageParam = 1, category = 'top_rated' }) => {
     try {
         const response = await axios.get(`https://api.themoviedb.org/3/movie/${category}`, {
             params: {
