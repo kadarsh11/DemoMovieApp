@@ -2,12 +2,25 @@
 
 Welcome to the Movie Demo App! This app is built with [Expo](https://expo.dev), utilizing React Query for state management and data fetching, Expo Router for navigation, and Axios for making API requests.
 
+# Screenshots
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+  <img src="./screenshot/details.png" alt="Details Screen" width="320" height="240" />
+  <img src="./screenshot/home.png" alt="Home Screen" width="320" height="240" />
+</div>
+
+### Demo Video
+
+<video width="320" height="240" controls>
+  <source src="./screenshot/video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Features
 
 - **Data Fetching:** Utilizes Axios to make API requests to the TMDB (The Movie Database) API.
 - **State Management:** Manages the application state and caching mechanisms using React Query.
 - **Navigation:** Uses Expo Router to handle navigation within the app.
-- **Responsive UI:** Provides a responsive user interface suitable for various device sizes.
 
 ## Prerequisites
 
@@ -47,16 +60,3 @@ Run the following command to start the Expo development server:
 ```bash
 npx expo start
 ```
-
-## Screenshots and Media
-
-Here are some visuals of our app:
-
-![Details Screen](./screenshot/details.png)
-![Home Screen](./screenshot/home.png)
-
-### Demo Video
-
-<video width="320" height="240" controls>
-  <source src="./screenshot/video.mp4" type="video/mp4">
-</video>
