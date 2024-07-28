@@ -1,9 +1,10 @@
-import { AppConfig, QKeys, fetchMovies } from "@/api";
+import { QKeys, fetchMovies } from "@/api";
 import Poster from "@/components/Poster";
 import { IMovie } from "@/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { router } from "expo-router";
 import React, { useCallback } from "react";
-import { FlatList, Image, ListRenderItemInfo, Text, View } from "react-native";
+import { FlatList, ListRenderItemInfo, Text } from "react-native";
 
 interface Props {
   category: string;
@@ -20,8 +21,16 @@ const MovieList = ({ category }: Props) => {
           ? lastPage.nextPage
           : undefined,
     });
+
   const renderItem = useCallback(({ item }: ListRenderItemInfo<IMovie>) => {
-    return <Poster movie={item} />;
+    return (
+      <Poster
+        movie={item}
+        onPress={() => {
+          router.push(`/details/${item.id}`);
+        }}
+      />
+    );
   }, []);
 
   if (isLoading) return <Text>Loading...</Text>;

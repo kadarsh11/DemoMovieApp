@@ -5,6 +5,7 @@ export const queryClient = new QueryClient();
 
 export const QKeys = {
     movies: "movies",
+    details: (movieId: string) => ["movies", 'details', movieId],
     list: (category: string) => ["movies", "list", category],
 }
 

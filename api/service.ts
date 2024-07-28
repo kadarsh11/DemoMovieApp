@@ -14,3 +14,13 @@ export const fetchMovies = async ({ pageParam = 1, category = 'top_rated' }) => 
         throw new Error('Failed to fetch movies');
     }
 };
+
+export const fetchMovieDetails = async (movieId: string) => {
+    const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+        params: {
+            api_key: process.env.EXPO_PUBLIC_API_KEY,
+            append_to_response: 'credits,videos,recommendations'
+        }
+    });
+    return data;
+};

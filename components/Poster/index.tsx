@@ -1,12 +1,24 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  Pressable,
+  PressableProps,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import React from "react";
 import { IMovie } from "@/types";
 import { Image } from "expo-image";
 import { AppConfig } from "@/api";
 
-const Poster = ({ movie }: { movie: IMovie }) => {
+const Poster = ({
+  movie,
+  onPress,
+}: {
+  movie: IMovie;
+  onPress: PressableProps["onPress"];
+}) => {
   return (
-    <View style={styles.container}>
+    <Pressable onPress={onPress} style={styles.container}>
       <View style={styles.poster}>
         <Image
           style={styles.image}
@@ -28,7 +40,7 @@ const Poster = ({ movie }: { movie: IMovie }) => {
           </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
